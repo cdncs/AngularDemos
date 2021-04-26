@@ -1,0 +1,109 @@
+<h3>{{title}}</h3>
+<h3>{{1+1}}</h3>
+<h3>{{1===1}}</h3>
+
+<input type="text" [id]="greeting" [name]="greeting" [value]="greeting"/>
+<hr>
+
+<h4>HTML绑定</h4>
+<div [innerHtml] = "htmlStr"></div>
+<hr>
+<h4>HTML属性绑定</h4>
+<table border="1">
+  <tbody>
+    <tr>
+      <!-- colspan属性只能利用HTML属性进行绑定 -->
+      <td [attr.colspan]="size">data</td>
+      <td [attr.rowspan]="size">data</td>
+      <td>data</td>
+      <td>data</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4>ngFor指令</h4>
+<table border="1">
+
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>下标</td>
+      <td>总数</td>
+      <td>偶数</td>
+      <td>基数</td>
+      <td>第一项</td>
+      <td>最后项</td>
+    </tr>
+    <tr *ngFor="let item of list; let i = index; let c = count; let e = even; let o = odd; let f = first; let l = last">
+      <td>{{item.name}}</td>
+      <td>{{i}}</td>
+      <td>{{c}}</td>
+      <td>{{e}}</td>
+      <td>{{o}}</td>
+      <td>{{f}}</td>
+      <td>{{l}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<h4>二维数组遍历</h4>
+<table border="1">
+  <tbody>
+    <tr *ngFor="let item of dataList; let i=index">
+      <td>{{item.name}}</td>
+    <td *ngFor="let fruit of item.fruits" >{{fruit}}</td>
+    
+    </tr>
+  </tbody>
+</table>
+
+
+<hr />
+<p>css类绑定</p>
+
+<div class="a b c">
+    这段文字是为了展示css类绑定
+</div>
+<p>全替换的例子</p>
+<div [class]="divClass">
+    这段文字是为了展示css类绑定
+</div>
+<p>增加或删减样式的例子</p>
+<div class="a b" [class.c]="isBig">
+    这段文字是为了展示是否增加某个类的css类绑定
+</div>
+<p>ngClass控制多个类的例子</p>
+<div class="a b" [ngClass]="ngClass">
+    这段文字是为了展示是否增加某个类的css类绑定
+</div>
+<p>样式绑定的例子</p>
+<div [style.color]="isDev?'red':'blue'">
+    这段文字是为了展示样式绑定
+</div>
+<p>样式绑定可以指定单位的例子</p>
+
+<div [style.font-size.em]="isDev?3:1">
+    样式绑定可以指定单位的例子
+</div>
+
+<p>ngStyle样式绑定可以指定多个的例子</p>
+
+<div [ngStyle]="divStyle">
+    ngStyle样式绑定可以指定多个的例子
+</div>
+
+<hr />
+
+<p>管道demo</p>
+
+<p>生日是：{{birthday}}</p>
+<p>使用了管道之后显示的生日是：{{birthday | date | uppercase}}</p>
+<p>date管道指定参数之后显示的生日是：{{birthday | date:'yyyy-MM-dd HH:mm:ss' | uppercase}}</p>
