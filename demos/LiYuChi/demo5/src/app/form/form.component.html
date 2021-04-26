@@ -1,4 +1,4 @@
-<h2 id="title">人员登记{{index}}</h2>
+<h2 id="title">人员登记系统</h2>
 
 
 
@@ -10,8 +10,8 @@
     <li>性 别：
       
 
-      <input type="radio" value="1" [name]="'sex'+index" [(ngModel)]="peopleInfo.sex"> <label for="sex1">男 </label>　　　
-      <input type="radio" value="2" [name]="'sex'+index" [(ngModel)]="peopleInfo.sex"> <label for="sex2">女 </label>
+      <input type="radio" value="1" name="sex" id="sex1" [(ngModel)]="peopleInfo.sex"> <label for="sex1">男 </label>　　　
+      <input type="radio" value="2" name="sex"  id="sex2" [(ngModel)]="peopleInfo.sex"> <label for="sex2">女 </label>
 
 
     </li>
@@ -56,6 +56,24 @@
     
      </li>
   </ul>
+
+
+
+  <button (click)="doSubmit()" class="submit">获取表单的内容</button>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+  <pre>
+
+
+    {{peopleInfo | json}}
+  </pre>
 
 
 </div>
