@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+}
+
+.people_list{
+    background-color: lightgray;
+    width: 400px;
+    margin: 40px auto;
+    padding:20px;
+    border:1px solid #eee;
+}
+
+.people_list > li{
+
+    height: 50px;
+    line-height: 50px;
+
+}
+li > .fonm_input{
+    width: 300px;
+    height: 28px;
+}
+.submit{
+    width: 200px;
+    height: 30px;
+    float: right;
+}

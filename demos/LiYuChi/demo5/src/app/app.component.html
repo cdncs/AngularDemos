@@ -1,0 +1,16 @@
+<div class="center">
+  <button (click)="formChnage()">修改表单组件</button>
+</div>
+<app-form index="1" #formDom></app-form> <!-- 使用模板引用变量 -->
+<app-form index="2"></app-form>
+
+<div class="content">
+
+  <button (click)="showAside()">弹出侧边栏</button>
+  <button (click)="hideAside()">隐藏侧边栏</button>
+
+</div>
+
+<div id="aside" [style.transform] = 'transform'>
+  这是一个侧边栏
+</div>
