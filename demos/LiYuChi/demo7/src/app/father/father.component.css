@@ -1,0 +1,10 @@
+.father{
+    width: 300px;
+    margin: 0 auto;
+    background-color: darkgray;
+    border-radius: 25px;
+}
+.btn{
+    display: block;
+    margin: 0 auto;
+}
