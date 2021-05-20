@@ -1,0 +1,39 @@
+<h1>Angular模板绑定数据</h1>
+<h2>{{title}}</h2>
+
+<h2>{{msg}}</h2>
+
+<h2>{{username}}</h2>
+
+<!--属性绑定-->
+<h2>{{userInfo.username}}</h2>
+
+<h2>{{message}}</h2>
+<hr />
+
+<h1>Angular模板绑定属性</h1>
+
+<div title="我是一个属性">
+    鼠标瞄上去
+</div>
+
+<div [title]="student">
+    王五
+</div>
+
+<hr />
+<h1>Angular模板绑定HTML</h1>
+
+<div>
+    {{content}}
+</div>
+
+<span [innerHTML]="content" class="red"></span>
+
+<hr />
+<h1>Angular循环数组</h1>
+<ol>
+    <li *ngFor="let weapon of arr">
+        {{weapon}}
+    </li>
+</ol>
