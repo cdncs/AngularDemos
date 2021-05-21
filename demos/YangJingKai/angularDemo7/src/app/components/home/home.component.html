@@ -1,0 +1,12 @@
+<h1>我是英雄联盟</h1>
+<hr>
+<app-footer #footer (outer)="reSelect($event)"></app-footer>
+
+<button (click)="getFooterHappy()">疾风剑豪</button>
+
+<hr>
+<app-header [title]="title" [play]="play" [home]="this"></app-header> <!--title是传值，play传递方法， home传递整个父组件给子组件>-->
+<br>
+<hr>
+ 
+

@@ -1,0 +1,82 @@
+<h1>加载图片</h1>
+<img src="assets/images/angular.jpg" alt="angular">
+<img [src]="picUrl" alt="pic">
+
+<hr>
+<br>
+<h1>条件判断语句 *ngIf</h1>
+<div *ngIf="flag">
+  <img src="assets/images/angular.jpg">
+</div>
+<div *ngIf="!flag">
+  <img src="assets/images/angular2.jpg">
+</div>
+
+<hr>
+<br>
+<h1>条件判断 *ngSwitch</h1>
+<span [ngSwitch]="killNum">
+<p *ngSwitchCase="2">
+  双杀
+</p>
+<p *ngSwitchCase="5">
+  五杀
+</p>
+<p *ngSwitchCase="8">
+  超神
+</p>
+<p *ngSwitchDefault>
+  零杀
+</p>
+</span>
+
+<hr>
+<br>
+<h1>绑定属性 [ngClass], [ngStyle]</h1>
+<div [ngClass]="{'green':!flag}">
+    <h2>ngClass属性绑定演示</h2>
+</div>
+
+<div [ngStyle]="{'color':'yellow'}">
+    <h2>ngStyle属性绑定演示</h2>
+</div>
+<div [ngStyle]="cssstyle">
+  <h2>ngStyle属性绑定演示</h2>
+</div>
+
+<hr>
+<br>
+<h1>ngNonBindable不编译特殊代码</h1>
+<div ngNonBindable>
+    Angular中使用 {{content}} 获取值
+</div>
+
+<hr>
+<h1>Angular管道</h1>
+<p>ts中的birthday属性通过  '|' 管道操作符 流入到date管道函数 中返回日期</p>
+<p>我的生日是{{birthday | date}}</p>
+
+<hr>
+<h1>自定义管道</h1>
+<h2>我是来自艾欧尼亚的{{game | selfPipe}}</h2>
+<h2 [ngClass]="{'green':true}" [innerHTML]="game | selfPipe"></h2>
+
+<hr>
+<h1>Angular事件</h1>
+<div *ngIf="flag">王者</div>
+<button (click)="flag=!flag">排位赛</button>
+<button (click)="game=''">你的段位</button>
+<button (click)="game=$event.target.innerHTML">和平精英</button>
+<button (click)="showRank($event)">rank等级</button>
+
+<hr>
+<h1>表单绑定</h1>
+<p>手动双向绑定<br>
+  <input type="text" [value]="game" (change)="game=$event.target.value">
+</p>
+<p>FormsModule的双向绑定<br>
+  <input type="text" [(ngModel)]="game">
+</p>
+<hr>
+
+
