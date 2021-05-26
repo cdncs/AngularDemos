@@ -1,0 +1,10 @@
+.header {
+    height: 40px;
+    line-height: 40px;
+    background: #000000;
+    color: #ffff;
+}
+.header a {
+    padding: 10px 30px;
+    color: #ffff;
+}
