@@ -1,0 +1,8 @@
+<app-lifecycle [sendMsg]="sendMsg" *ngIf="mountFlag"></app-lifecycle>
+<hr>
+
+<h2>{{sendMsg}}</h2>
+<button (click)="changeSendMsg()">改变来自父组件的值</button>
+
+<hr>
+<button (click)="mount()">卸载/挂载子组件</button>
