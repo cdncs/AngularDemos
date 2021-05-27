@@ -1,0 +1,13 @@
+<div class="content">
+  <div class="left">
+    <!-- <a href="#">新闻分类</a> -->
+    <a [routerLink]="['/news/newslist']" routerLinkActive='active'>新闻分类</a>
+    <br>
+    <br>
+    <!-- <a href="#">新闻详情</a> -->
+    <a [routerLink]="['/news/newsdetails']" routerLinkActive='active'>新闻详情</a>
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+  </div>
+</div>
