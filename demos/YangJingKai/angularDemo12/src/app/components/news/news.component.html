@@ -1,0 +1,8 @@
+<p>news works!</p>
+<a [routerLink]="['/newscontent']">新闻详情</a>
+<h2>Get传值</h2>
+<ul>
+    <li *ngFor="let item of list; let key=index">
+        <a [routerLink]="['/newscontent']" [queryParams]="{id:key}">{{key+1}}. {{item}}</a>
+    </li>
+</ul>

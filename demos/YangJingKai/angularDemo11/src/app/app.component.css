@@ -1,0 +1,15 @@
+header {
+    height:44px;
+    line-height: 44px;
+    background: #000000;
+    color: #fff;
+}
+
+.header a{
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.header .router-active {
+    color: red;
+}
