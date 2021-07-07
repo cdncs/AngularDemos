@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CustomPreloadingStrategy } from './custom.preloading.strategy';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
 
-    path:'product',loadChildren: () => import('./module/product/product.module').then(m => m.ProductModule)
+    path:'product',loadChildren: () => import('./module/product/product.module').then(m => m.ProductModule),
+    data: { preload: true }
   },
 
   {
@@ -24,7 +26,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {
+      preloadingStrategy: CustomPreloadingStrategy  //自定义预加载策略, 如果使用PreloadAllModules则默认预加载所有模块
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
