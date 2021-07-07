@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 //引入HttpClientModule
-import { HttpClientModule,HttpClientJsonpModule} from '@angular/common/http';
+import { HttpClientModule,HttpClientJsonpModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { InterceptorService } from './service/interceptors/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,13 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

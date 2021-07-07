@@ -10,6 +10,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 
 import { HttpserviceService } from './service/httpservice.service';
+import { AxiosInterceptorService } from './service/interceptors/axios-interceptor.service';
 
 
 @Component({
@@ -20,7 +21,14 @@ import { HttpserviceService } from './service/httpservice.service';
 export class AppComponent {
   
   public list:any[]=[];
-  constructor(public http:HttpClient,public httpService:HttpserviceService) { }
+  constructor(
+    public http:HttpClient,
+    public httpService:HttpserviceService,
+    public axiosInterceptorService:AxiosInterceptorService
+  ) { 
+    //Third party interceptor config
+    //this.axiosInterceptorService.configAxiosInterceptor()
+  }
 
   ngOnInit() {
 
