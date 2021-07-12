@@ -5,10 +5,13 @@ import { UserComponent } from './user.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddressComponent } from './components/address/address.component';
+import { AuthGuard } from 'src/app/guards/auth-guard.service';
 
 const routes: Routes = [
   {
-    path:'',component:UserComponent
+    path:'',component:UserComponent,
+    canActivate:[AuthGuard],
+    canDeactivate:[AuthGuard]
   },
   {
     path:'profile',component:ProfileComponent

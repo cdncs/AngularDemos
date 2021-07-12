@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CustomPreloadingStrategy } from './custom.preloading.strategy';
+import { AuthGuard } from './guards/auth-guard.service';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
 
-    path:'article',loadChildren: () => import('./module/article/article.module').then(m => m.ArticleModule)
+    path:'article',loadChildren: () => import('./module/article/article.module').then(m => m.ArticleModule),
+    canLoad:[AuthGuard]
   },
   {
 
