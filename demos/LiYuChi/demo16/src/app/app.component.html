@@ -1,0 +1,54 @@
+<div class="container my-5">
+  <h1>Reactive Forms and Validators</h1>
+  <hr>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group ">
+          <label for=" ">Name</label>
+          <input type="text " class="form-control" placeholder="Enter your name" #firstNameArea formControlName="name" required>
+          {{'dirty: ' + name.dirty}}&nbsp;&nbsp;&nbsp;&nbsp;{{'touched: ' + name.touched}}&nbsp;&nbsp;&nbsp;&nbsp;{{'valid: ' + name.valid}}
+          <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+              <span *ngIf="name?.errors.required">Name is required</span>
+              <span *ngIf="name?.errors.maxlength">The name should be {{ name.errors.maxlength.requiredLength }} characters</span>
+              <span *ngIf="name?.errors.forbiddenName">The Name cannot be Bob</span>
+          </div>
+          <!-- <span>{{name?.errors|json}}</span> -->
+      </div>
+
+      <div class="form-group ">
+          <label for=" ">Surname</label>
+          <input type="text " class="form-control " placeholder="Enter your surname " #surNameArea formControlName="surName" required>
+          <div class="alert alert-danger" *ngIf="surName.touched && surName.invalid">
+              <span *ngIf="surName?.errors.required">Surname is required</span>
+          </div>
+      </div>
+      <div class="form-group ">
+          <label>Age</label>
+          <input type="number" class="form-control " placeholder="Enter your age " #ageInput formControlName="age" required>
+          <div class="alert alert-danger" *ngIf="age.touched && !age.valid">
+              <span *ngIf="age?.errors.required">Age is required</span>
+              <span *ngIf="age?.errors.range">Age should be between 20 and 120</span>
+          </div>
+      </div>
+      <div class="form-group ">
+          <label>Email</label>
+          <input type="email" class="form-control " placeholder="Enter your email " #emailInput formControlName="email" required>
+          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <span *ngIf="email.errors.required ">E-mail is required</span>
+              <span *ngIf="email.errors.email ">Invalid E-mail format</span>
+          </div>
+      </div>
+
+      <hr>
+      <button (click)="clearInputAreas()" class="btn btn-success">Clear Form</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="submit" [disabled]="form.invalid" class="btn btn-success">Submit</button>
+
+      <blockquote class="blockquote">
+          <p class="lead"><em> Name : </em>{{name.value}}</p>
+          <p class="lead"><em>Surname : </em> {{surNameArea.value}}</p>
+          <p class="lead"><em>Age : </em> {{ageInput.value}}</p>
+          <p class="lead"><em>E-mail : </em> {{emailInput.value}}</p>
+      </blockquote>
+      <hr>
+  </form>
+</div>

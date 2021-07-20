@@ -1,0 +1,25 @@
+
+.container{
+    margin: 0 auto;
+    width: 50%;
+}
+.form-group{
+    margin-bottom: 10px
+}
+.form-group label{
+    display: inline-block;
+    width: 120px;
+}
+.alert-danger{
+    color: red;
+}
+.form-control.ng-dirty.ng-invalid {
+    border-left: 8px solid #a94442;
+}
+
+.form-control.ng-dirty.ng-valid {
+    border-left: 8px solid #42A948;
+}
+em{
+    font-weight: bold;
+}
